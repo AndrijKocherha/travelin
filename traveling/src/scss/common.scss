@@ -1,0 +1,157 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.button {
+   background-color: $orangeColor;
+	display: inline-flex;
+	padding:  rem(20);
+   border-radius: rem(12);
+   font-size: rem(20);
+   line-height: math.div(24 , 20);
+   color: #fff;
+   transition: background-color 0.3s ease 0s;
+   
+   @media (any-hover: hover){
+      &:hover{
+         background-color: #f15d38;
+      }
+   }
+   &.swiper-button-disabled {
+      transition: all 0.3s ease 0s;
+      background-color: $darkColor;
+   }
+}
+.title {
+   display: inline-block;
+  font-family: "Playfair Display";
+   font-size: rem(64);
+   line-height: math.div(85 , 64);
+   color: $darkColor;
+   position: relative;
+   padding-bottom: rem(20);
+   &::before{
+      content:'';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: rem(3);
+      background-color: $orangeColor;
+      width: 60%;
+   }
+   @media (max-width: em(1152)){
+        font-size: rem(54);
+   }
+      @media (max-width:$mobileSmall){
+          font-size: rem(40); 
+      }
+   @media (max-width:$mobile){
+        @include adaptiveValue("font-size", 54, 40);
+        line-height: math.div(72 , 54);
+   }
+   @media (max-width:$mobileSmall){
+       line-height: math.div(53 , 40); 
+   }
+      display: inline-block;
+      &_right {
+         display: inline-block;
+      }
+   }
+   .title.title_right {
+      &::before{
+         left: auto;
+         right: 0;
+         
+      }
+   }
+.descr {
+   font-size: rem(24);
+   line-height: math.div(28 , 24);
+   @media (max-width:$mobile){
+       font-size: rem(20);
+       line-height: math.div(24 , 20); 
+   }
+   @media (max-width:$mobileSmall){
+      font-size: rem(18);
+      line-height: math.div(21 , 18); 
+   }
+}
+.text {
+   font-size: rem(18);
+   line-height: math.div(21 , 18);
+   color: #767E86;
+
+}
+.head-block {
+   &_blog {
+      &:not(:last-child) {
+         margin-bottom: rem(100);
+      }
+   }
+
+   &__title-box {
+     &:not(:last-child) {
+         margin-bottom: rem(32);
+    }
+    display: flex;   }
+   &__title {
+      overflow: hidden;
+     display: inline-block;
+  }
+  &__title-box_right {
+     justify-content: end;
+  }
+   // .popular-destination__content-arrows
+   &__content-arrows {
+      @media (min-width:$mobile){
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: rem(40);
+      }
+      
+   }
+   &__content-arrows_revese {
+     flex-direction: row-reverse;
+   }
+   // .popular-destination__text
+   &__text {
+      &_blog {
+         &:not(:last-child) {
+            margin-bottom: rem(35);
+         }
+      }
+   }
+
+   &__buttons {
+      @media (min-width:$mobile){
+          align-self: end; 
+      }
+      display: flex;
+      align-items: center;
+      gap: rem(40);
+      &_offer {
+         justify-content: center;
+      }
+      
+   }
+   &__buttons_center {
+     @media (max-width:$mobile){
+        justify-content: center; 
+    }
+   }
+   // .popular-destination__button
+   &__button {
+      padding-left: rem(28);
+      padding-right: rem(28);
+
+   }
+   // .popular-destination__button-right
+   &__button-right {
+      &::before{
+         transform: rotate(180deg)
+         
+      }
+   }
+  }   
+//  ===================================================================
+
+
+
